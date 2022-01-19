@@ -5,10 +5,10 @@ public class Roboto {
 
     public String responder(String frase){
 
-        Pattern pattern = Pattern.compile("Que tiempo hace en (\\w+)\\?");
+        Pattern pattern = Pattern.compile("Que tiempo hace en (?<ciudad>\\w+)\\?");
         Matcher matcher = pattern.matcher(frase);
         if(matcher.find()){
-            return "Te vas a " +matcher.group(1)+ " y lo miras.";
+            return "Te vas a " +matcher.group("ciudad")+ " y lo miras.";
         }
         return "Hola humano!";
     }
